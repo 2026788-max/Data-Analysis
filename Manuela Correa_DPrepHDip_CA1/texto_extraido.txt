@@ -1,0 +1,143 @@
+=== MARKDOWN (Celda 1) ===
+In this project, we will analyze a provided dataset containing various variables related to the context of higher education students. All variables serve as features, while the target variable represents the students' status: graduated, dropped out, or currently enrolled. To this end, we will begin by gaining an overview of the dataset, followed by cleaning, organizing, and analyzing it, identifying potential correlations between variables, and finally applying PCA.
+
+=== MARKDOWN (Celda 4) ===
+Regarding the structure of the dataframe, we can see that it consists of 37 columns and 4,424 rows, covering everything from the students' personal details to their grades or credits across various semesters, as well as elements related to macroeconomics.
+
+=== MARKDOWN (Celda 6) ===
+When looking at the data categories, there are variables that appear as categorical, even though the data dictionary indicates they should be numeric,this shows that there are likely null values that the program has not recognized as such. In some variables it has mising or null data, because there is less columsin the folowin features, Application mode , Application order,Course,Previous qualification (grade),Father's qualification,Mother's occupation,Father's occupation,Admission grade,Debtor,Tuition fees up to date ,Age at enrollment, International, Curricular units 1st sem (grade),Curricular units 2nd sem (enrolled) , Curricular units 2nd sem (grade)
+
+=== MARKDOWN (Celda 9) ===
+Although many columns appear numerical, they actually represent categorical variables that have been numerically encoded; consequently, metrics like the mean are, quite obviously, meaningless. There are, however, other aspects worth examining—for instance, the range or the averages. Take, for example, age at enrollment: the average is around 23.3 years—indicating a relatively young demographic—with a standard deviation of seven.
+
+=== MARKDOWN (Celda 11) ===
+So, in the data diccionary we see that some of the variables have dirty or mising data that is not reflected in the is null. Fore exsample in marital status the data should have a numerical descriptor from 1 to 6 indicate the diferent categories, but it says object, so even if says that is not any null, something is wrong. Nacionalyty as well even if it sais 0 null, it says that is an object, when in the data diccionary says that the categoris are encode in integer numbers. These kind of problemes whit a wrong type of feature in the answer of the sistem and in the data diccionary are presents in numerous variables. Is necesary to check all of the unique values and compare the answer with the espected values acording to the data diccionary.
+
+=== MARKDOWN (Celda 13) ===
+Integer numbers from 1 to 6 ok. just "?" is wrong 
+
+=== MARKDOWN (Celda 17) ===
+Integer numbers corresponding to the specific ones stipuled in the data diccionary.The nan is allredy show as 1 null before
+
+=== MARKDOWN (Celda 19) ===
+Integer numbers from 0 to 9 ok. The nan is allredy show as 1 null before
+
+=== MARKDOWN (Celda 21) ===
+Integer numbers corresponding to the specific ones stipuled in the data diccionary: 33 , 171 , 8014, 9003 , 9070, 9085 , 9119 , 9130 ,9147 ,9238,9254 ,9500,9556 ,9670 ,9773 ,9853,9991.  Also the nan is allredy show as 3 null before.
+
+=== MARKDOWN (Celda 24) ===
+Integer numbers corresponding to the specific ones stipuled in the data diccionary: 1,2,3,4,5,6,9,10,12,14,15,19,38,39,40,42,43. All good here
+
+=== MARKDOWN (Celda 28) ===
+The numbers are continuos and bethwen 95 and 190, the range has to be bethwen 0 and 200 so is good. Also the nan is allredy show as 4 null before.
+
+=== MARKDOWN (Celda 30) ===
+Integer numbers corresponding to the specific ones stipuled in the data diccionary: 1, 2, 6, 11, 13, 14, 17, 21, 22, 24, 25, 26, 32, 41, 62, 100, 101, 103, 105, 108, 109  ok. just "?" is wrong
+
+=== MARKDOWN (Celda 34) ===
+The type of quotation marks used—specifically the distinction between double and single quotes—caused confusion within the system regarding the variable name being sought, due to the apostrophe in "mothers and fathers"; I therefore switched to double quotes to avoid this issue.
+
+=== MARKDOWN (Celda 36) ===
+In Mother's and Father's qualification is ok, integer numbers corresponding to the specific ones stipuled in the data diccionary:1, 2, 3, 4, 5, 6, 9, 10, 11, 12, 14, 18, 19, 22, 26, 27, 29, 30, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, all good. In  Father's qualification there is one null adecuade detected.
+
+=== MARKDOWN (Celda 38) ===
+In Mother's occupation is ok, integer numbers corresponding to the specific ones stipuled in the data diccionary:0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 90, 99, 122, 123, 125, 131, 132, 134, 141, 143, 144, 151, 152, 153, 171, 173, 175, 191, 192, 193, 194, all good. The null is alrredy marked
+
+=== MARKDOWN (Celda 40) ===
+In Father's occupation integer numbers corresponding to the specific ones stipuled in the data diccionary:0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 90, 99, 101, 102, 103, 112, 114, 121, 122, 123, 124, 131, 132, 134, 135, 141, 143, 144, 151, 152, 153, 154, 161, 163, 171, 172, 174, 175, 181, 182, 183, 192, 193, 194, 195, but the category in marked as object, because apart of the correct marked null (nan), there is a "FIVE" that have to be corrected
+
+=== MARKDOWN (Celda 42) ===
+Initially, I replaced the word "five" with the number 5, but then I realized that a specific option had been clearly indicated there; furthermore, there were several similar errors within the target category, so, to maintain consistency, I replaced the word "five" with the number 5.
+
+=== MARKDOWN (Celda 47) ===
+The numbers are continuos and bethwen 95 and 190, the range has to be bethwen 0 and 200 so is good. Also the nan is allredy show as 2 null before.
+
+=== MARKDOWN (Celda 55) ===
+In Age at enrollmen integer numbers, but the category in marked as object, because apart of the correct marked null (nan), there is a "UnKnown" that has to be corrected. 
+
+=== MARKDOWN (Celda 59) ===
+Ok integer numbers, but the category is marked as object, because there is a "Na" that has to be corrected. 
+
+=== MARKDOWN (Celda 65) ===
+Dice que deberian ser inter numeros, pero es decimal #debe haber alguna manera de sacarle desimales. 
+
+=== MARKDOWN (Celda 68) ===
+The grades are bethen 0 and 20 as the data diccionary indicate and the null is marked
+
+=== MARKDOWN (Celda 77) ===
+Ok bethwen 0 an 20, null marked. Same as Curricular units 1st sem (grade) is continuos marked in data diccionary as integral number
+
+=== MARKDOWN (Celda 84) ===
+There are clare null valus not registered, but because is evident what category are they tying to show ill will keep it, changing the speling but mainteining the meaning. To keep the same criteria in all the data, Ill do the same with "five" in Father's occupation.
+
+=== MARKDOWN (Celda 91) ===
+Data is clean so Ill go to start analycing, i have tried using pariplot but the sistem understand numbers of codification as values, so ill change it.
+
+=== MARKDOWN (Celda 92) ===
+I need to understand the distribution of each one to se the best way of doing it. The order of aplication is not really a numerical feature, but because is ordinal in terms of numerical position (preference 0 to preference 10) could be usefull see relations whith this positions represented close by numbers.  
+
+=== MARKDOWN (Celda 98) ===
+I group the variables by type to simplify the analysis, but ultimately, I don’t think it makes sense to create specific charts for every single type—only for some of them.
+
+=== MARKDOWN (Celda 101) ===
+Regarding the application method, we observe that more than a third applied during the first general phase, followed by 19.7% during the second general phase; in third place, with 17.7%, was a special application process for those over 23 and under 42, with other application methods accounting for smaller percentages.
+
+=== MARKDOWN (Celda 102) ===
+Regarding the order of application, we observe that the vast majority of students selected the course in question as their top priority—specifically 68.4% of them. It is listed as the second priority by 12.4% of students, followed by a steady decline (7% for the third priority, and so on). Consequently, it appears that most students are enrolled in the course they chose as their primary preference, which could potentially indicate a high level of motivation and a personal commitment in this regard.
+
+=== MARKDOWN (Celda 103) ===
+Regarding the courses, we observe a fairly even distribution. While the tourism course accounts for 17% of the students, the other courses generally fall within the 4% to 8% range.
+Respecto al horario, la inmensa mayoría de los estudiantes, correspondiente a un 89.1%, atiende de día, solo un 10.9 de noche.
+
+=== MARKDOWN (Celda 104) ===
+Regarding the qualification prior to entering the course, the vast majority have completed secondary education, with 84% falling into this category.
+
+=== MARKDOWN (Celda 106) ===
+Regarding the education of the students' mothers, although 24.2% completed higher education, it is striking that the following categories, with a combined percentage higher than this, at around 45%,represent different levels of basic education. This indicates that these students are reaching higher educational levels than their mothers were able to access. Regarding the maximum educational level reached by the students' fathers, the level tends to be slightly lower than that of the mothers, as the main majorities are basic education and completed secondary education accounts for only 20.4%, becoming the third majority, and with a slightly higher total level of those who only reached basic education, corresponding to around 60%.
+
+=== MARKDOWN (Celda 107) ===
+Regarding the occupation of the students' mothers, the unskilled workers category represents 35.6%, followed by administrative staff at 18.5% and personal services at 12%, with other categories to a lesser extent, occupations that are likely related to their relatively low educational level. Regarding the occupation of the fathers, 22.8% are also in the unskilled worker category, followed by 15.1% in skilled workers in industrial, construction and craftsmen, and 11.7% in personal service. We see that regarding the fathers, despite a lower educational level, there is labor insertion with higher skill levels, which may be due to various gender factors, such as traditional caregiving versus provider roles associated with each gender.
+
+=== MARKDOWN (Celda 109) ===
+Regarding the aspects of student education payments, 88.6% of students are not in debt to the institutions, while 11.4% are. Concerning tuition fees at the time of data collection (related to the previous metric), 88.1% have their tuition up to date and only 11.9% do not. Finally, regarding scholarships held by some students, 75.2% have a scholarship and only 24.8% do not. Although we do not know the total amount of the scholarships or whether they correspond to a partial discount or a full payment, the high percentage of students with scholarships could be related to the high percentage of students with up-to-date tuition and no debt.
+
+=== MARKDOWN (Celda 111) ===
+Moving on to certain personal aspects that characterize the students, regarding gender, 64.8% are male students and the remaining 35.2% are female. 88.6% of them are single, 8.6% are married, and the rest fall into other marital statuses. Regarding nationality, 97.7% are of Portuguese nationality, making it evident that the data corresponds to that country, while the remainder corresponds to countries from different continents in smaller percentages. Regarding the displacement status of the students, 54.8% are in this situation, while the remaining percentage is not. Regarding the presence of special educational needs, 98.8% of the students do not present this condition, while the remaining 1.2% do. Regarding age at enrollment, a higher percentage is between 18 and 20 years old, which corresponds to the fact that they recently finished secondary education and entered their first higher education course, with 23.4% for 18 years old, 20.6% for 19, and 13.5% for 20. As ages increase, the percentages drop significantly. Regarding being an international student, as we have mentioned, 97% are not.
+
+=== MARKDOWN (Celda 115) ===
+The enrollment age has a lot of outsiers of a higer age that the averge (corresponding to young people). The grades looks centraded, but wuith outsiders and the aplication order shows that most of the students selected the cours in one of their first preferences.
+
+=== MARKDOWN (Celda 117) ===
+Is not claearly bisible relation betwuen macroeconomic indicators and the target variable
+
+=== MARKDOWN (Celda 119) ===
+The shape of the distribution of the admition grade and the target variable shows the Dropout a litle it more to the lower grades and a litle bit more of graduates in the beter grades. Whith the curricular units of both semesters the graduate is clearly concentres in mor credits and the dropout is the lower number of units in the second semester, but equaly distributed in the firs one. The enrroled is concentreated as well in hier number of units in both semesters
+
+
+=== MARKDOWN (Celda 121) ===
+There is a clear concentration arround 20 years in all de categories of target, but the proportion of graduates is higer in the concentred age arround twenties and the droupout is significantly higer that the other two targets categories betwen arround 23 and 40 and mainteins a bit uper the otrer categories after fourtys
+
+=== MARKDOWN (Celda 125) ===
+The grades bethuen semesters are related, but not whit the previous cualification grades
+
+=== MARKDOWN (Celda 127) ===
+There is relation betwen the grades and the graduation, beter grades are asociates with more chances of graduare and low, but some in a medium range also, are asociates whith drops out
+
+=== MARKDOWN (Celda 129) ===
+To identify other possible relationships that allow us to understand the variables and especially their connection with the target, I proceed to create a correlation heatmap. However, when plotting it, the long variable names hinder the visualization and clear understanding of the chart, so I proceed to rename them using shorter and easier-to-understand labels. Also, to see the relationship between the target variable and the other variables, we convert them to numerical format by encoding them.
+
+=== MARKDOWN (Celda 133) ===
+In the correlation matrix, we add the dichotomous and ordinal variables, as well as the target variable. While the target variable cannot be evaluated with a direct correlation, it's included to see if there's any indication of a relationship. We see there is a small relationship with the tuition. We see there is a relationship of 0.53 with the units approved in the semester and of 0.49 with the grades of the first semester, and this relationship tends to increase in the second semester with a 0.62 with the units approved and a 0.57 with the grades. While we cannot take these numbers purely with a correlation, as it is a categorical variable, we do see that it appears to be related, which makes sense with the grades and the possibility of finishing the courses on time. Likewise, we see that there is a relationship between the units, time, and grades between the semesters with a strong relationship, but this can also have to do with the units often being quite similar for all students, so there is not a large variance within these variables. There is also a relationship between the age of enrollment and the tendency to be late, but we believe this can also be due to a large concentration in certain ages and a large concentration late. There are also relationships, less strong but negative in this case, between the unemployment rate and the GDP, which makes sense as both are related macroeconomic indicators. Beyond that, there are no significant relationships that we can see.
+
+=== MARKDOWN (Celda 134) ===
+The "Curse of Dimensionality" is the group of problems that emerge when we have a bigger group of dimensions or features. Intuitively, more information looks like a good thing, but it presents some problems, for example, the Data Sparsity. So if we have one feature we can think of it like a line, if we have two dimensions like a square, and three dimensions as a cube. If we have the same amount of observations in a line, in a square, or in a cube, the dispersion will be a lot more in the square than in the line and even more in the cube. So if we are trying to get "the shape," it could be difficult in a cube with a few observations and a lot of empty space, and we cannot get more observations. That exponential growth of space happens every time we add a dimension, in the same way that the transit from 2D to 3D is exponentially bigger, not just a bit more. With that much space, the program will try to get shapes and patterns of the data in suboptimal conditions and can make an overfitting. This problem is when the system has not enough observations to see real relations between a lot of variables, so it makes false connections that just could make sense in the data set. Let's say we take 100 people and we ask them 100 questions about favorite things (color, food, etc.), because the system doesn't see any pattern between the people who like purple color, which happens to be 7, the system continues looking, and with just 7 observations it is easy that by chance 3 of them like Chinese food. So the system will establish that purple and Chinese food are related, something that, of course, just happens by chance in that data set. Although this dataset does not contain an immense number of columns, 37 is still a large number, and the possibility of reducing them helps address the challenges associated with having so many dimensions.
+
+=== MARKDOWN (Celda 135) ===
+Next, we will apply PCA to determine the minimum number of variables. To do this, we will start by creating a copy of the cleaned dataframe and removing any NaN values; although we had previously attempted to remove them, the PCA process still failed because it continued to treat null valuesas valid entries—preventing certain inputs from being processed as numbers and thereby blocking the PCA. We will therefore address this, and subsequently remove the target column, which is categorical.
+
+=== MARKDOWN (Celda 143) ===
+I tried using a Robust Scaler because there were some outliers. While this significantly reduced the number of required components—down to 23—an examination of the variable weights revealed an issue: in the first component (which naturally captured a substantial portion of the variance), a single variable—"previous rating"—accounted for over 99% of that component. This suggests that the variable may have had very little variance—perhaps because the responses were coded in such a way that many entries shared the same "previous rating." In any case, if a component is essentially just reproducing one of the original variables, it fails to achieve the intended purpose of PCA; therefore, I discarded this scaling method.
+
+=== COMENTARIOS CÓDIGO (Celda 149) ===
+# Exporta solo las celdas de Markdown a un archivo .md
+
